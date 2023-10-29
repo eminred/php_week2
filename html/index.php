@@ -16,15 +16,18 @@ $tariff->addService(new ServiceGPS(15));
 $tariff->addService(new ServiceDriver(100));
 
 echo '<pre>';
+$basic = new TariffBasic(5, 59);
+$basic->addService(new ServiceDriver(100));
+
 echo 'Тариф базовый <br>';
-echo 'Расстояние: ' . $tariff->getDistance() .'<br>';
-echo 'Время: ' . $tariff->getMinutes() . '<br>';
-echo 'Сервисы: ' . $tariff->getServices() . '<br>';
-echo 'Общая сумма: ' . $tariff->countPrice() . '<br>';
+echo 'Расстояние: ' . $basic->getDistance() .'<br>';
+echo 'Время: ' . $basic->getMinutes() . '<br>';
+echo 'Сервисы: ' . $basic->getServices() . '<br>';
+echo 'Общая сумма: ' . $basic->countPrice() . '<br>';
 
 echo '<br>';
 
-$student = new TariffStudent(5, 60);
+$student = new TariffStudent(5, 59);
 $student->addService(new ServiceDriver(100));
 
 echo 'Тариф студенческий <br>';
